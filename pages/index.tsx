@@ -69,7 +69,7 @@ export default function Home (){
                 </Banner>
                 <Sobre>
                     <div>
-                    <p>Olá, meu nome é Richard e sou um desenvolvedor de software com habilidades focadas na experiência do usuário e programação. Meu objetivo é criar soluções de software que sejam intuitivas, eficientes e agradáveis ​para os usuários.</p>
+                    <p><strong>Olá,</strong> meu nome é Richard e sou um desenvolvedor de software com habilidades focadas na experiência do usuário e programação. Meu objetivo é criar soluções de software que sejam intuitivas, eficientes e agradáveis ​para os usuários.</p>
                     <p>Com uma abordagem centrada no usuário, trabalho para entender as necessidades e expectativas dos usuários finais e garantir que essas necessidades sejam atendidas em todas as fases do desenvolvimento do software.</p>
                     </div>
                     <img src="https://github.com/RichardRodriguesGomesDeJesus.png" alt="" />

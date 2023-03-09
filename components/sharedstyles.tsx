@@ -140,7 +140,6 @@ const Text = styled.p`
 `
 const Sobre = styled.div`
   display: flex;
-  height:300px;
   margin: 16px 0;
   padding: 16px 32px;
   width: 100vw;
@@ -148,17 +147,30 @@ const Sobre = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width:50%;
+    width:100%;
     p{
       font-size: 1.2rem;
+      strong{
+        font-size:2rem;
+        text-decoration: underline;
+      }
     }
   }
-  img{
-    border: solid 5px #D3D3D3;
-    border-radius: 50% ;
-    max-height: 100%;
-    margin: 0 auto;
-    max-width: 100%;
+  
+  @media screen and (min-width: 0 ){
+    img{
+      display: none;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    img{
+      border: solid 5px #D3D3D3;
+      border-radius: 50% ;
+      display: flex;
+      max-height: 50%;
+      margin: 0 auto;
+      max-width: 50%;
+    }
   }
 `
 
