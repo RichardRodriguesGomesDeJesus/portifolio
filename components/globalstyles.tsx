@@ -3,11 +3,11 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    color: ${({ theme }) => theme.colors.primary};
+    background: #767675;
+    color: #f0f0f0;
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Poppins;
   }
 
   a {
@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+  h2,p{
+    margin: 0;
+  }
 `
-
 export default GlobalStyle
