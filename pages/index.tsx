@@ -111,15 +111,15 @@ export default function Home (){
                 </Buttons> 
                 <Contact id="contact">
                     <SecondaryTitle>Vamos entrar em contato?</SecondaryTitle>
-                    <Form action="https://formsubmit.co/ richardrodriguesgomesdejesus@gmail.com" method="POST">
+                    <Form action="https://formsubmit.co/richard.gj.rodrigues@gmail.com" method="POST">
                         <label htmlFor="nome">Me diga seu nome</label>
-                        <input type="text"name="nome" placeholder="Digite aqui" />
+                        <input type="text"name="nome" placeholder="Digite aqui" required/>
                         <label htmlFor="email">Me diga seu Email</label>
-                        <input type="email" name="email" placeholder="emai@exemplo.com" />
+                        <input type="email" name="email" placeholder="emai@exemplo.com" required/>
                         <label htmlFor="title">Assunto</label>
-                        <input type="text" placeholder="Digite aqui" name="title"/>
+                        <input type="text" placeholder="Digite aqui" name="title" required/>
                         <label htmlFor="mensagem">Detalhes</label>
-                        <textarea rows={10} cols={33} placeholder="Escreva a sua mensagem" name="mensagem" />
+                        <textarea rows={10} cols={33} placeholder="Escreva a sua mensagem" name="mensagem" required />
                         <button>Enviar</button>
                     </Form>
                 </Contact>
