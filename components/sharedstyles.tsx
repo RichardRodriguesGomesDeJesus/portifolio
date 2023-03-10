@@ -84,6 +84,7 @@ const Main = styled.main`
   justify-content: center;
 
 `
+
 const typing = keyframes`
   from { width: 0 }
 `
@@ -92,6 +93,7 @@ const blinkCursor = keyframes`
   from, to { border-color: transparent }
   50% { border-color: #fff } 
 `
+
 const Title = styled.h1`
   animation: ${typing} 3s steps(10, end), ${blinkCursor} 0.75s step-end infinite;
   background: #000000a6;
@@ -173,6 +175,7 @@ const Sobre = styled.div`
     }
   }
 `
+
 const Services = styled.div`
   border-bottom: solid 5px #000;
   border-top: solid 5px #000;
@@ -314,6 +317,7 @@ const Carrossel = styled.div`
   }
 
 `
+
 const Buttons = styled.div`
   display: flex;
   button{
@@ -332,6 +336,7 @@ const Buttons = styled.div`
     }
   }
 `
+
 const Contact = styled.section`
   align-items: center;
   display: flex;
@@ -339,6 +344,7 @@ const Contact = styled.section`
   padding: 16px 8px;
   width: 100vw;
 `
+
 const Form = styled.form`
   display:flex;
   flex-direction: column;
@@ -399,6 +405,7 @@ const Form = styled.form`
     }
   }
 `
+
 const Footer = styled.footer`
   align-items: center;
   background: #444444;
@@ -408,4 +415,57 @@ const Footer = styled.footer`
   padding: 50px 0;
   width: 100vw;
 `
-export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services}
+
+const Menssage = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+
+  div{
+    align-items: center;
+    background: #f0f0f0 ;
+    border-radius: 16px;
+    color: #444444;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    @media screen and (min-width: 0 ){
+      height: 200px;
+      width: 280px;
+      h2{
+        font-size: 1.2rem;
+      }
+      a{
+        font-size: 1rem;
+      }
+    };
+    @media screen and (min-width: 768px) {
+      height: 300px;
+      width: 400px;
+      h2{
+        font-size: 1.5rem;
+      }
+      a{
+        font-size: 1.2rem;
+      }
+    };
+    @media screen and (min-width: 1024px ){
+      height: 400px;
+      width: 600px;
+      h2{
+        font-size: 2rem;
+      }
+      a{
+        font-size: 1.5rem;
+      }
+    };
+  }
+ 
+
+`
+
+export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services, Menssage}
