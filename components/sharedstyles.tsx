@@ -138,6 +138,7 @@ const Sobre = styled.div`
     width:100%;
     p{
       font-size: 1.2rem;
+      margin: 1rem 0 ;
       strong{
         font-size:2rem;
         text-decoration: underline;
