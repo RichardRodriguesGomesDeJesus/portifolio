@@ -162,12 +162,13 @@ const Sobre = styled.div`
   }
 `
 const Services = styled.div`
+  border-bottom: solid 5px #000;
+  border-top: solid 5px #000;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 16px 0;
-  padding: 100px 0;
   width: 100vw;
   div{
     display: flex;
