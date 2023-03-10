@@ -64,12 +64,14 @@ const Menu = styled.ul`
 `
 
 const Main = styled.main`
-  padding: 1rem 0 0 0;
-  flex: 1;
+  align-items: center;
+  background: linear-gradient(to bottom,#767675, #444444) ;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 1rem 0 0 0;
+
 `
 const typing = keyframes`
   from { width: 0 }
@@ -124,20 +126,6 @@ const SecondaryTitle = styled.h2`
   width:100%;
 `
 
-const Text = styled.p`
-  border-radius: 16px;
-  color: #444444 ;
-  line-height: 1.15;
-  text-decoration: none;
-  @media screen and (min-width: 0 ){
-    font-size: 2rem;
-    padding: 0 8px;
-  };
-  @media screen and (min-width: 768px) {
-    font-size: 2.5rem;
-    padding: 0 8px;
-  };
-`
 const Sobre = styled.div`
   display: flex;
   margin: 16px 0;
@@ -170,6 +158,35 @@ const Sobre = styled.div`
       max-height: 50%;
       margin: 0 auto;
       max-width: 50%;
+    }
+  }
+`
+const Services = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 16px 0;
+  padding: 100px 0;
+  width: 100vw;
+  div{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    margin: 32px 16px ;
+    text-align: center;
+    width: 11.25rem;
+    p{
+      font-size:1.5rem;
+    }
+    a{
+      background: #fff;
+      border: solid #000 2px;
+      border-radius: 16px;
+      color: #444444;
+      font-size:1.5rem;
+      margin: 1rem 0 0 0;
+      padding: 1rem;
     }
   }
 `
@@ -222,14 +239,14 @@ const Card =styled.div`
   transition: all 1s;
   transform: translateX(-100%);
   img{
-    width:120px;
+    width: 80px;
   }
   @media screen and (min-width: 0 ){
-    height: 400px;  
+    height: 300px;  
     width: calc( 100% - 16px) ;
   };
   @media screen and (min-width: 768px ){
-    height: 600px;  
+    height: 400px;  
     width: calc( 50% - 16px) ;
   };
   @media screen and (min-width: 1024px) {
@@ -245,6 +262,22 @@ const Card =styled.div`
     transition: none;
   }
 `
+
+const Text = styled.p`
+  border-radius: 16px;
+  color: #444444 ;
+  line-height: 1.15;
+  text-decoration: none;
+  @media screen and (min-width: 0 ){
+    font-size: 2rem;
+    padding: 0 8px;
+  };
+  @media screen and (min-width: 768px) {
+    font-size: 2.5rem;
+    padding: 0 8px;
+  };
+`
+
 const Carrossel = styled.div`
   ::-webkit-scrollbar {
     width: 10px;
@@ -288,7 +321,6 @@ const Buttons = styled.div`
 `
 const Contact = styled.section`
   align-items: center;
-  background:linear-gradient(to bottom, #767675, #444444);;
   display: flex;
   flex-direction: column;
   padding: 16px 8px;
@@ -355,13 +387,12 @@ const Form = styled.form`
   }
 `
 const Footer = styled.footer`
-
   align-items: center;
+  background: #444444;
   display: flex;
-  background: linear-gradient(to bottom, #444444, #1f1f1f) ;
   flex-flow: column nowrap;
   justify-content: center;
   padding: 50px 0;
   width: 100vw;
 `
-export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre}
+export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services}

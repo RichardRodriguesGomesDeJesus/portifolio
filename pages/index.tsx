@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from 'next/link'
 import { useEffect, useRef } from "react";
-import { Card, Container, Header, Banner, LinkSocial, Main, SecondaryTitle, Skills, SocialIcons, Text, Title, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre } from "../components/sharedstyles";
+import { Card, Container, Header, Banner, LinkSocial, Main, SecondaryTitle, Skills, SocialIcons, Text, Title, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services } from "../components/sharedstyles";
 
 export default function Home (){
     const carrossel = useRef(null)
@@ -74,10 +74,21 @@ export default function Home (){
                     </div>
                     <img src="https://github.com/RichardRodriguesGomesDeJesus.png" alt="" />
                 </Sobre>
+                <Services>
+                    <SecondaryTitle>Serviços</SecondaryTitle>
+                    <div>
+                        <p>Criação de Sites</p>
+                        <Link href={'#contact'}>Saiba mais</Link>
+                    </div>
+                    <div>
+                        <p>Criação de e-commerces</p>
+                        <Link href={'#contact'}>Saiba mais</Link>
+                    </div>
+                </Services>
                 <Skills id="skills">
-                    <SecondaryTitle>Meus diferenciais e serviços</SecondaryTitle>
+                    <SecondaryTitle>Meus diferenciais</SecondaryTitle>
                     <Card id="hidden">
-                        <Text>Priorização da Responsividade para seu negocio ser acessivel em diferentes tamanhos de telas</Text>
+                        <Text>Interface acessível em telas variadas.</Text>
                         <img src="icons/screen.svg" alt="" />
                     </Card>
                     <Card id="hidden">
@@ -85,20 +96,8 @@ export default function Home (){
                         <img src="icons/user.svg" alt="" />
                     </Card>
                     <Card id="hidden">
-                        <Text>Criação De Sites</Text>
-                        <img src="icons/view.svg" alt="" />
-                    </Card>
-                    <Card id="hidden">
-                        <Text>Criação De E-Commerces</Text>
-                        <img src="icons/e-commerce.svg" alt="" />
-                    </Card>
-                    <Card id="hidden">
                         <Text>Boas práticas em acessibilidade</Text>
                         <img src="icons/acessibilidade.svg" alt="acessibilidade icone" />
-                    </Card>
-                    <Card id="hidden">
-                        <Text>Arquitetura de computadores</Text>
-                        <img src="icons/settings.svg" alt="" />
                     </Card>
                 </Skills>
                 <Carrossel ref={carrossel}>
