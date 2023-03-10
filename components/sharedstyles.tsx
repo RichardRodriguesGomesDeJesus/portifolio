@@ -1,4 +1,4 @@
-import styled, { keyframes, ThemedStyledProps } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const Container = styled.div`
   display: flex;
@@ -9,14 +9,15 @@ const Container = styled.div`
 
 const Header = styled.header`
   display: flex ;
-  
   justify-content: center;
   align-items: center;
   width: 100%;
   @media screen and (min-width: 0 ){
     flex-flow: column nowrap;
+    padding: 0 ;
   };
   @media screen and (min-width: 768px ){
+    padding: 16px 0;
     flex-flow: row nowrap;
   };
 `
@@ -47,16 +48,27 @@ const Menu = styled.ul`
   @media screen and (min-width: 0 ){
     align-items: center;
     flex-flow: column nowrap;
+    a{
+      text-align: center;
+      border-bottom: solid 2px #000;
+      width: 100%;
+    }
+    
+
   };
   @media screen and (min-width: 768px ){
     flex-flow: row nowrap;
+    a{
+      border-bottom: none;
+    }
   };
   a{
     color: #D3D3D3;
     font-size: 1.2rem;
     padding: 6px;
     &:hover{
-      border-bottom: solid 2px #fff;
+      text-decoration: underline;
+      
       color:#fff ;
       padding: 5px;
     }
@@ -70,7 +82,6 @@ const Main = styled.main`
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 0 0 0;
 
 `
 const typing = keyframes`
