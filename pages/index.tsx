@@ -120,7 +120,7 @@ export default function Home (){
                         <input type="text" placeholder="Digite aqui" name="title" required/>
                         <label htmlFor="mensagem">Detalhes</label>
                         <textarea rows={10} cols={33} placeholder="Escreva a sua mensagem" name="mensagem" required />
-                        <input type="hidden" name="_next" value="https://localhost:3000/thanks"></input>
+                        <input type="hidden" name="_next" value="https://richard-rodrigues-dev.vercel.app/thanks"></input>
                         <button>Enviar</button>
                     </Form>
                 </Contact>

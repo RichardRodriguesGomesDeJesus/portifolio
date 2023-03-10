@@ -14,7 +14,7 @@ export default function Thanks(){
                 <Menssage>
                     <div>
                         <h2>A mensagem foi enviada com sucesso</h2>
-                        <Link href={'..'}>Voltar</Link>
+                        <Link href={'https://richard-rodrigues-dev.vercel.app/'}>Voltar</Link>
                     </div>
                 </Menssage>
             </Main>
