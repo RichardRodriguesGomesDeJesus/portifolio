@@ -408,7 +408,8 @@ const Form = styled.form`
 
 const Footer = styled.footer`
   align-items: center;
-  background: #444444;
+  background: #000;
+  border-top: solid;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
