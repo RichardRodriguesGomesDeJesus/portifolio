@@ -57,10 +57,10 @@ export default function Home (){
                 </SocialIcons>
                 <Menu>
                     <Link href={'#contact'}>
-                        Contato
+                        Contact
                     </Link>
                     <Link href={'#skills'}>
-                        Detalhes
+                        Details
                     </Link>
                 </Menu>
             </Header>
