@@ -49,10 +49,10 @@ export default function Home (){
             <Header>
                 <SocialIcons>
                     <LinkSocial href="https://www.linkedin.com/in/richard-rodriegues/" >
-                        <img src="/icons/linkedin.svg" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linkedin icon" />
                     </LinkSocial>
                     <LinkSocial href="https://github.com/RichardRodriguesGomesDeJesus">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+                        <img src="icons/github-white.svg" alt="github icon" />
                     </LinkSocial>
                 </SocialIcons>
                 <Menu>
@@ -66,39 +66,39 @@ export default function Home (){
             </Header>
             <Main>
                 <Banner>
-                    <Title>Procurando um desenvolvedor?</Title>
+                    <Title>Looking for a developer?</Title>
                 </Banner>
                 <Sobre>
                     <div>
-                    <p><strong>Olá,</strong> meu nome é Richard e sou um desenvolvedor de software com habilidades focadas na experiência do usuário e programação. Meu objetivo é criar soluções de software que sejam intuitivas, eficientes e agradáveis ​para os usuários.</p>
-                    <p>Com uma abordagem centrada no usuário, trabalho para entender as necessidades e expectativas dos usuários finais e garantir que essas necessidades sejam atendidas em todas as fases do desenvolvimento do software.</p>
+                    <p><strong>Hello,</strong>My name is Richard and I'm a software developer with skills focused on user experience and programming. My goal is to create software solutions that are intuitive, efficient and easy to use.</p>
+                    <p>With a user-centric approach, I work to understand the needs and expectations of end users and ensure that these needs are met at all stages of software development.</p>
                     </div>
-                    <img src="https://github.com/RichardRodriguesGomesDeJesus.png" alt="" />
+                    <img src="https://github.com/RichardRodriguesGomesDeJesus.png" alt="My photo" />
                 </Sobre>
                 <Services>
-                    <SecondaryTitle>Serviços</SecondaryTitle>
+                    <SecondaryTitle>services</SecondaryTitle>
                     <div>
-                        <p>Criação de Sites</p>
-                        <Link href={'#contact'}>Saiba mais</Link>
+                        <p>Website Creation</p>
+                        <Link href={'#contact'}>Learn more</Link>
                     </div>
                     <div>
-                        <p>Criação de e-commerces</p>
-                        <Link href={'#contact'}>Saiba mais</Link>
+                        <p>e-commerce creation</p>
+                        <Link href={'#contact'}>Learn more</Link>
                     </div>
                 </Services>
                 <Skills id="skills">
-                    <SecondaryTitle>Meus diferenciais</SecondaryTitle>
+                    <SecondaryTitle>My differentials</SecondaryTitle>
                     <Card id="hidden">
-                        <Text>Interface acessível em telas variadas.</Text>
-                        <img src="icons/screen.svg" alt="" />
+                        <Text>Accessible interface on different screens.</Text>
+                        <img src="icons/screen.svg" alt="screen icon" />
                     </Card>
                     <Card id="hidden">
-                        <Text>Abordagem focada na experiência do usuário</Text>
-                        <img src="icons/user.svg" alt="" />
+                        <Text>Approach focused on user experience</Text>
+                        <img src="icons/user.svg" alt="user icon" />
                     </Card>
                     <Card id="hidden">
-                        <Text>Boas práticas em acessibilidade</Text>
-                        <img src="icons/acessibilidade.svg" alt="acessibilidade icone" />
+                        <Text>Accessibility best practices</Text>
+                        <img src="icons/acessibilidade.svg" alt="accessibility icon" />
                     </Card>
                 </Skills>
                 <Carrossel ref={carrossel}>
@@ -107,40 +107,40 @@ export default function Home (){
                         )}
                 </Carrossel>
                 <Buttons>
-                    <button onClick={handleLeftClick}><img src="/icons/seta-left.svg" alt="" /></button>
-                    <button onClick={handleRightClick}><img src="/icons/seta-right.svg" alt="" /></button>
+                    <button onClick={handleLeftClick}><img src="/icons/seta-left.svg" alt="left arrow icon" /></button>
+                    <button onClick={handleRightClick}><img src="/icons/seta-right.svg" alt="right arrow icon" /></button>
                 </Buttons> 
                 <Contact id="contact">
-                    <SecondaryTitle>Vamos entrar em contato?</SecondaryTitle>
+                    <SecondaryTitle>Let's get in touch?</SecondaryTitle>
                     <Form action="https://formsubmit.co/richard.gj.rodrigues@gmail.com" method="POST">
-                        <label htmlFor="nome">Me diga seu nome</label>
+                        <label htmlFor="nome">tell me your name.</label>
                         <input type="text"name="nome" placeholder="Digite aqui" required/>
-                        <label htmlFor="email">Me diga seu Email</label>
+                        <label htmlFor="email">tell me your Email</label>
                         <input type="email" name="email" placeholder="emai@exemplo.com" required/>
-                        <label htmlFor="title">Assunto</label>
+                        <label htmlFor="title">Subject</label>
                         <input type="text" placeholder="Digite aqui" name="title" required/>
-                        <label htmlFor="mensagem">Detalhes</label>
-                        <textarea rows={10} cols={33} placeholder="Escreva a sua mensagem" name="mensagem" required />
+                        <label htmlFor="message">Message</label>
+                        <textarea rows={10} cols={33} placeholder="write your message" name="message" required />
                         <input type="hidden" name="_next" value="https://richard-rodrigues-dev.vercel.app/thanks"></input>
-                        <button>Enviar</button>
+                        <button>Send</button>
                     </Form>
                 </Contact>
             </Main>
             <Footer>
                 <Menu>
                     <Link href={'#contact'}>
-                        Contato
+                        Contact
                     </Link>
                     <Link href={'#skills'}>
-                        Detalhes
+                        Details
                     </Link>
                 </Menu>
                 <SocialIcons>
                     <LinkSocial href="https://www.linkedin.com/in/richard-rodriegues/" >
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linkedin icon" />
                     </LinkSocial>
                     <LinkSocial href="https://github.com/RichardRodriguesGomesDeJesus">
-                        <img src="icons/github-white.svg" />
+                        <img src="icons/github-white.svg" alt="github icon" />
                     </LinkSocial>
                 </SocialIcons>
             </Footer>
