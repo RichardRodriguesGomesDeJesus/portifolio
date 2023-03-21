@@ -164,11 +164,19 @@ const Sobre = styled.div`
   }
   
   @media screen and (min-width: 0 ){
+    flex-direction: column;
     img{
-      display: none;
+      border: solid 5px #D3D3D3;
+      border-radius: 100% ;
+      display: flex;
+      max-height: 100%;
+      margin: 0 auto;
+      max-width: 100%;
     }
+    
   }
   @media screen and (min-width: 768px) {
+    flex-direction: row;
     img{
       border: solid 5px #D3D3D3;
       border-radius: 50% ;
