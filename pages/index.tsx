@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from 'next/link'
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, Container, Header, Banner, LinkSocial, Main, SecondaryTitle, Skills, SocialIcons, Text, Title, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services } from "../components/sharedstyles";
 
 export default function Home (){
@@ -38,6 +38,17 @@ export default function Home (){
         const hiddenElements = document.querySelectorAll('#hidden')
         hiddenElements.forEach((el)=> observer.observe(el))
     },[])
+    const [numChars, setNumChars] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          const h1 = document.querySelector('h1');
+          if (h1) {
+            setNumChars(h1.innerText.length);
+          }
+        }, 1000);
+        return () => clearInterval(interval);
+      }, []);
     return(
         <Container>
             <Head>
@@ -66,7 +77,7 @@ export default function Home (){
             </Header>
             <Main>
                 <Banner>
-                    <Title>Looking for a developer?</Title>
+                    <Title numChars={numChars} >Looking for a developer?</Title>
                 </Banner>
                 <Sobre>
                     <div>

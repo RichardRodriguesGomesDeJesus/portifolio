@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const Container = styled.div`
@@ -93,8 +94,10 @@ const blinkCursor = keyframes`
   from, to { border-color: transparent }
   50% { border-color: #fff } 
 `
-
-const Title = styled.h1`
+interface IH1Props {
+  numChars: number;
+}
+const Title = styled.h1<IH1Props>`
   animation: ${typing} 3s steps(10, end), ${blinkCursor} 0.75s step-end infinite;
   background: #000000a6;
   border-right: .15em solid #fff;
@@ -103,7 +106,7 @@ const Title = styled.h1`
   letter-spacing: 0.1em;
   
   white-space: nowrap;
-  width: 33ch;
+  width: ${props => props.numChars + 3}ch;
   @media screen and (min-width: 0 ){
     font-size: 1.1rem;
     margin: 1rem;
@@ -113,6 +116,7 @@ const Title = styled.h1`
   };
 
 `
+
 
 const Banner = styled.div`
   align-items: center;
