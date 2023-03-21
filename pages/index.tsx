@@ -93,7 +93,15 @@ export default function Home (){
                         <Link href={'#contact'}>Learn more</Link>
                     </div>
                     <div>
-                        <p>e-commerce creation</p>
+                        <p>Express API integration</p>
+                        <Link href={'#contact'}>Learn more</Link>
+                    </div>
+                    <div>
+                        <p>Landing page development</p>
+                        <Link href={'#contact'}>Learn more</Link>
+                    </div>
+                    <div>
+                        <p>bug fixes</p>
                         <Link href={'#contact'}>Learn more</Link>
                     </div>
                 </Services>
