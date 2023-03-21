@@ -164,7 +164,7 @@ const Sobre = styled.div`
   }
   
   @media screen and (min-width: 0 ){
-    flex-direction: column;
+    flex-direction: column-reverse;
     img{
       border: solid 5px #D3D3D3;
       border-radius: 100% ;
