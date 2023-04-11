@@ -133,11 +133,11 @@ export default function Home (){
                     <SecondaryTitle>Let's get in touch?</SecondaryTitle>
                     <Form action="https://formsubmit.co/richard.gj.rodrigues@gmail.com" method="POST">
                         <label htmlFor="nome">tell me your name.</label>
-                        <input type="text"name="nome" placeholder="Digite aqui" required/>
+                        <input type="text"name="nome" placeholder="type here" required/>
                         <label htmlFor="email">tell me your Email</label>
                         <input type="email" name="email" placeholder="emai@exemplo.com" required/>
                         <label htmlFor="title">Subject</label>
-                        <input type="text" placeholder="Digite aqui" name="title" required/>
+                        <input type="text" placeholder="type here" name="title" required/>
                         <label htmlFor="message">Message</label>
                         <textarea rows={10} cols={33} placeholder="write your message" name="message" required />
                         <input type="hidden" name="_next" value="https://richard-rodrigues-dev.vercel.app/thanks"></input>
