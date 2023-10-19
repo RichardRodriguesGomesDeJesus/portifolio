@@ -151,6 +151,7 @@ export default function Home (){
                         <label htmlFor="message">{texts[22]}</label>
                         <textarea rows={10} cols={33} placeholder={texts[23]} name="message" required />
                         <input type="hidden" name="_next" value="https://www.devrichard.com.br/thanks"></input>
+                        <input type="hidden" name="_captcha" value="false" />
                         <button>{texts[24]}</button>
                     </Form>
                 </Contact>
