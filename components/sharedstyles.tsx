@@ -40,6 +40,24 @@ const LinkSocial = styled.a`
   width: 38px;
 `
 
+const ContainerLanguage = styled.div`
+  display: flex;
+  margin: 1rem 0 0 0;
+  gap: 1rem ;
+  justify-content: center;
+  width: 100%;
+`
+
+const SelectLanguage = styled.select`
+  color: #D3D3D3;
+  font-size: 1rem;
+  background: transparent;
+  option {
+    background: #767676;
+  }
+
+`
+
 const Menu = styled.ul`
   display: flex;
   justify-content: space-around;
@@ -86,27 +104,9 @@ const Main = styled.main`
 
 `
 
-const typing = keyframes`
-  from { width: 0 }
-`
-
-const blinkCursor = keyframes`
-  from, to { border-color: transparent }
-  50% { border-color: #fff } 
-`
-interface IH1Props {
-  numChars: number;
-}
-const Title = styled.h1<IH1Props>`
-  animation: ${typing} 3s steps(10, end), ${blinkCursor} 0.75s step-end infinite;
+const Title = styled.h1`
   background: #000000a6;
-  border-right: .15em solid #fff;
-  overflow: hidden;
-  
   letter-spacing: 0.1em;
-  
-  white-space: nowrap;
-  width: ${props => props.numChars + 3}ch;
   @media screen and (min-width: 0 ){
     font-size: 1.1rem;
     margin: 1rem;
@@ -116,7 +116,6 @@ const Title = styled.h1<IH1Props>`
   };
 
 `
-
 
 const Banner = styled.div`
   align-items: center;
@@ -251,9 +250,7 @@ const Skills = styled.div`
   }
 `;
 
-
-
-const Card =styled.div` 
+const Card = styled.div` 
   align-items: center;
   background: #f4f4f4;
   border-radius: 16px;
@@ -481,4 +478,4 @@ const Menssage = styled.div`
 
 `
 
-export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services, Menssage}
+export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services, Menssage, ContainerLanguage, SelectLanguage}

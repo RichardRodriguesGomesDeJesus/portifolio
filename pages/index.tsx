@@ -1,10 +1,23 @@
 import Head from "next/head";
 import Link from 'next/link'
 import { useEffect, useRef, useState } from "react";
-import { Card, Container, Header, Banner, LinkSocial, Main, SecondaryTitle, Skills, SocialIcons, Text, Title, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services } from "../components/sharedstyles";
+import { Card, Container, Header, Banner, LinkSocial, Main, SecondaryTitle, Skills, SocialIcons, Text, Title, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services, ContainerLanguage, SelectLanguage } from "../components/sharedstyles";
+import { textsEnglish, textsPotuguese } from "../utils/texts";
 
 export default function Home (){
+    const [ language , setLeguage] = useState("English")
+    const [ texts, setTexts] = useState([])
+    
     const carrossel = useRef(null)
+
+    useEffect(()=>{
+        if (language === "English") {
+            setTexts(textsEnglish)
+        }
+        if (language === "Português"){
+            setTexts(textsPotuguese)
+        }
+    },[language])
     const handleLeftClick = (e) => {
         e.preventDefault()
         carrossel.current.scrollLeft -= carrossel.current.offsetWidth
@@ -38,17 +51,6 @@ export default function Home (){
         const hiddenElements = document.querySelectorAll('#hidden')
         hiddenElements.forEach((el)=> observer.observe(el))
     },[])
-    const [numChars, setNumChars] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-          const h1 = document.querySelector('h1');
-          if (h1) {
-            setNumChars(h1.innerText.length);
-          }
-        }, 1000);
-        return () => clearInterval(interval);
-      }, []);
     return(
         <Container>
             <Head>
@@ -66,57 +68,65 @@ export default function Home (){
                         <img src="icons/github-white.svg" alt="github icon" />
                     </LinkSocial>
                 </SocialIcons>
+                <ContainerLanguage>
+                    <SelectLanguage onChange={(e)=> {
+                            setLeguage(e.target.value)
+                        }} value={language}>
+                        <option value="English">English</option>
+                        <option value="Português">Português</option>
+                    </SelectLanguage>
+                </ContainerLanguage>
                 <Menu>
                     <Link href={'#contact'}>
-                        Contact
+                        {texts[0]}
                     </Link>
                     <Link href={'#skills'}>
-                        Details
+                        {texts[1]}
                     </Link>
                 </Menu>
             </Header>
             <Main>
                 <Banner>
-                    <Title numChars={numChars} >Looking for a developer?</Title>
+                    <Title>{texts[2]}</Title>
                 </Banner>
                 <Sobre>
                     <div>
-                    <p><strong>Hello,</strong>My name is Richard and I'm a software developer with skills focused on user experience and programming. My goal is to create software solutions that are intuitive, efficient and easy to use.</p>
-                    <p>With a user-centric approach, I work to understand the needs and expectations of end users and ensure that these needs are met at all stages of software development.</p>
+                    <p><strong>{texts[3]}</strong> {texts[4]}</p>
+                    <p>{texts[5]}</p>
                     </div>
                     <img src="https://github.com/RichardRodriguesGomesDeJesus.png" alt="My photo" />
                 </Sobre>
                 <Services>
-                    <SecondaryTitle>services</SecondaryTitle>
+                    <SecondaryTitle>{texts[6]}</SecondaryTitle>
                     <div>
-                        <p>Website Creation</p>
-                        <Link href={'#contact'}>Learn more</Link>
+                        <p>{texts[7]}</p>
+                        <Link href={'#contact'}>{texts[11]}</Link>
                     </div>
                     <div>
-                        <p>Express API integration</p>
-                        <Link href={'#contact'}>Learn more</Link>
+                        <p>{texts[8]}</p>
+                        <Link href={'#contact'}>{texts[11]}</Link>
                     </div>
                     <div>
-                        <p>Landing page development</p>
-                        <Link href={'#contact'}>Learn more</Link>
+                        <p>{texts[9]}</p>
+                        <Link href={'#contact'}>{texts[11]}</Link>
                     </div>
                     <div>
-                        <p>bug fixes</p>
-                        <Link href={'#contact'}>Learn more</Link>
+                        <p>{texts[10]}</p>
+                        <Link href={'#contact'}>{texts[11]}</Link>
                     </div>
                 </Services>
                 <Skills id="skills">
-                    <SecondaryTitle>My differentials</SecondaryTitle>
+                    <SecondaryTitle>{texts[12]}</SecondaryTitle>
                     <Card id="hidden">
-                        <Text>Accessible interface on different screens.</Text>
+                        <Text>{texts[13]}</Text>
                         <img src="icons/screen.svg" alt="screen icon" />
                     </Card>
                     <Card id="hidden">
-                        <Text>Approach focused on user experience</Text>
+                        <Text>{texts[14]}</Text>
                         <img src="icons/user.svg" alt="user icon" />
                     </Card>
                     <Card id="hidden">
-                        <Text>Accessibility best practices</Text>
+                        <Text>{texts[15]}</Text>
                         <img src="icons/acessibilidade.svg" alt="accessibility icon" />
                     </Card>
                 </Skills>
@@ -130,28 +140,28 @@ export default function Home (){
                     <button onClick={handleRightClick}><img src="/icons/seta-right.svg" alt="right arrow icon" /></button>
                 </Buttons> 
                 <Contact id="contact">
-                    <SecondaryTitle>Let's get in touch?</SecondaryTitle>
+                    <SecondaryTitle>{texts[16]}</SecondaryTitle>
                     <Form action="https://formsubmit.co/richard.gj.rodrigues@gmail.com" method="POST">
-                        <label htmlFor="nome">tell me your name.</label>
-                        <input type="text"name="nome" placeholder="type here" required/>
-                        <label htmlFor="email">tell me your Email</label>
-                        <input type="email" name="email" placeholder="emai@exemplo.com" required/>
-                        <label htmlFor="title">Subject</label>
-                        <input type="text" placeholder="type here" name="title" required/>
-                        <label htmlFor="message">Message</label>
-                        <textarea rows={10} cols={33} placeholder="write your message" name="message" required />
-                        <input type="hidden" name="_next" value="https://richard-rodrigues-dev.vercel.app/thanks"></input>
-                        <button>Send</button>
+                        <label htmlFor="nome">{texts[17]}</label>
+                        <input type="text"name="nome" placeholder={texts[18]} required/>
+                        <label htmlFor="email">{texts[19]}</label>
+                        <input type="email" name="email" placeholder={texts[20]} required/>
+                        <label htmlFor="title">{texts[21]}</label>
+                        <input type="text" placeholder={texts[18]} name="title" required/>
+                        <label htmlFor="message">{texts[22]}</label>
+                        <textarea rows={10} cols={33} placeholder={texts[23]} name="message" required />
+                        <input type="hidden" name="_next" value="https://www.devrichard.com.br/thanks"></input>
+                        <button>{texts[24]}</button>
                     </Form>
                 </Contact>
             </Main>
             <Footer>
                 <Menu>
                     <Link href={'#contact'}>
-                        Contact
+                        {texts[0]}
                     </Link>
                     <Link href={'#skills'}>
-                        Details
+                        {texts[1]}
                     </Link>
                 </Menu>
                 <SocialIcons>
