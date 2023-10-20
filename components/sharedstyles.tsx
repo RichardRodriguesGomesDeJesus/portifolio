@@ -118,7 +118,7 @@ const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   @media screen and (min-width: 0 ){
     font-size: 1.1rem;
-    margin: 1rem;
+    margin: 1.5rem;
   };
   @media screen and (min-width: 768px) {
     font-size: 2.5rem;
@@ -386,7 +386,6 @@ const Form = styled.form`
   flex-grow: 1 ;
   gap: 1rem;
   width: calc(100% - 32px);
-
   label{
     font-size: 2rem;
   }
