@@ -117,8 +117,8 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media screen and (min-width: 0 ){
-    font-size: 1.1rem;
-    margin: 1.5rem;
+    font-size: 1.5rem;
+    margin: 1rem;
   };
   @media screen and (min-width: 768px) {
     font-size: 2.5rem;
