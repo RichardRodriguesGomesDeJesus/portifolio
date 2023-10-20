@@ -1,5 +1,12 @@
-import { useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+
+export const colors = {
+  primary: "#ff66c4" ,
+  segundary: "#cb6ce6",
+  terceary:"#8b3dff",
+  background: "#030303",
+  fontColor:"#F0F0F0"
+}
 
 const Container = styled.div`
   display: flex;
@@ -96,7 +103,7 @@ const Menu = styled.ul`
 
 const Main = styled.main`
   align-items: center;
-  background: linear-gradient(to bottom,#767675, #444444) ;
+  background: linear-gradient(to bottom,${colors.background}, ${colors.background},${colors.terceary} ,${colors.terceary}, ${colors.background}) ;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -105,8 +112,10 @@ const Main = styled.main`
 `
 
 const Title = styled.h1`
-  background: #000000a6;
+  background: linear-gradient(to right, ${colors.terceary},  ${colors.segundary},  ${colors.primary});
   letter-spacing: 0.1em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @media screen and (min-width: 0 ){
     font-size: 1.1rem;
     margin: 1rem;
@@ -121,14 +130,12 @@ const Banner = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  
+  background: transparent;
   width: 100vw  ;
   @media screen and (min-width: 0 ){
-    background: #000 ;
     height: calc( 50vh - 4rem);
   };
   @media screen and (min-width: 768px) {
-    background: url('/img/dev_img.jpg') center / cover no-repeat;
     height: calc( 100vh - 4rem);
   };
 `
@@ -165,8 +172,10 @@ const Sobre = styled.div`
   @media screen and (min-width: 0 ){
     flex-direction: column-reverse;
     img{
-      border: solid 5px #D3D3D3;
+      border: 5px solid transparent;
+      background: linear-gradient(${colors.background}, ${colors.terceary}) padding-box;
       border-radius: 100% ;
+      padding: 1rem;
       display: flex;
       max-height: 100%;
       margin: 0 auto;
@@ -177,8 +186,10 @@ const Sobre = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     img{
-      border: solid 5px #D3D3D3;
-      border-radius: 50% ;
+      border: 5px solid transparent;
+      background: linear-gradient(${colors.background}, ${colors.terceary}) padding-box;
+      border-radius: 100% ;
+      padding: 1rem;
       display: flex;
       max-height: 50%;
       margin: 0 auto;
@@ -207,13 +218,23 @@ const Services = styled.div`
       font-size:1.5rem;
     }
     a{
-      background: #fff;
-      border: solid #000 2px;
+      border: solid ${colors.fontColor} 2px;
       border-radius: 16px;
-      color: #444444;
+      color: ${colors.fontColor};
+      box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 32px 0 ${colors.fontColor};
+      text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
       font-size:1.5rem;
       margin: 1rem 0 0 0;
       padding: 1rem;
+      &:hover {
+        opacity:1;
+        border: solid ${colors.fontColor} 2px;
+        text-shadow: none;
+        color: ${colors.background};
+        box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 40px 0 ${colors.fontColor};
+        text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
+        background: ${colors.fontColor} ;
+      }
     }
   }
 `
@@ -329,19 +350,24 @@ const Carrossel = styled.div`
 
 const Buttons = styled.div`
   display: flex;
+  gap: 1rem;
   button{
-    background:#D3D3D3;
-    box-shadow: 1px 4px 0;
-    border: solid 1px;
+    background: transparent;
+    border: solid ${colors.fontColor} 2px;
     border-radius: 16px;
-    cursor: pointer;
-    margin: 10px;
-    &:hover{
-      background: #fff;
-      border: solid #fff 1px;
-    }
-    &:active{
-      box-shadow: #444444 0 -1px 0;
+    color: ${colors.fontColor};
+    box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 32px 0 ${colors.fontColor};
+    text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
+    font-size:1.5rem;
+    margin: 1rem 0 0 0;
+    padding: 1rem;
+    &:hover {
+      opacity:1;
+      border: solid ${colors.fontColor} 2px;
+      color: transparent;
+      box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 40px 0 ${colors.fontColor};
+      text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
+      background: ${colors.fontColor} ;
     }
   }
 `

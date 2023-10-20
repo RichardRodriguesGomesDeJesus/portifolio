@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
+import { colors } from './sharedstyles'
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    background: #767675;
-    color: #f0f0f0;
+    background: ${colors.background};
+    color: ${colors.fontColor};
     padding: 0;
     margin: 0;
     font-family: Poppins;
