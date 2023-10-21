@@ -59,6 +59,7 @@ const SelectLanguage = styled.select`
   color: #D3D3D3;
   font-size: 1rem;
   background: transparent;
+  border: none;
   option {
     background: #767676;
   }
