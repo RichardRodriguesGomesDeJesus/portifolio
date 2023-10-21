@@ -37,7 +37,8 @@ export default function Home (){
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
     ]
     useEffect(()=>{
         const observer = new IntersectionObserver((entries)=>{
