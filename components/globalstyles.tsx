@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
+    font-family: 'Open Sans';
     box-sizing: border-box;
   }
   h2,p{

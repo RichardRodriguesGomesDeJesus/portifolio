@@ -200,9 +200,7 @@ const Sobre = styled.div`
   }
 `
 
-const Services = styled.div`
-  border-bottom: solid 5px #000;
-  border-top: solid 5px #000;
+const Projects = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -211,13 +209,19 @@ const Services = styled.div`
   width: 100vw;
   div{
     display: flex;
+    padding: 16px 0;
+    border-bottom: solid 5px #000;
     flex-direction:column;
     justify-content: space-between;
     margin: 32px 16px ;
+    gap: 1rem;
     text-align: center;
-    width: 11.25rem;
+    width: auto;
     p{
-      font-size:1.5rem;
+      font-size:2rem;
+    }
+    img{
+      width:100vw;
     }
     a{
       border: solid ${colors.fontColor} 2px;
@@ -226,8 +230,9 @@ const Services = styled.div`
       box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 32px 0 ${colors.fontColor};
       text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
       font-size:1.5rem;
-      margin: 1rem 0 0 0;
+      margin: auto;
       padding: 1rem;
+      width: 280px;
       &:hover {
         opacity:1;
         border: solid ${colors.fontColor} 2px;
@@ -238,76 +243,6 @@ const Services = styled.div`
         background: ${colors.fontColor} ;
       }
     }
-  }
-`
-
-const Skills = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  &:nth-child(2){
-    transition-delay: 200ms;
-  }
-  &:nth-child(3){
-    transition-delay: 400ms;
-  }
-  &:nth-child(4){
-    transition-delay: 600ms;
-  }
-  &:nth-child(5){
-    transition-delay: 800ms;
-  }
-  &:nth-child(6){
-    transition-delay:1000ms;
-  }
-  &:nth-child(7){
-    transition-delay: 1200ms;
-  }
-  @media screen and (min-width: 0 ){
-    margin: 1rem 6px;
-    gap: 1rem;
-  }
-  @media screen and (min-width: 768px) {
-    justify-content: space-around;
-    margin: 1rem 36px;
-  }
-`;
-
-const Card = styled.div` 
-  align-items: center;
-  background: #f4f4f4;
-  border-radius: 16px;
-  box-shadow: #000 1px 4px 4px;
-  display: flex;
-  flex-direction: column;
-  filter: blur(5px);
-  justify-content: space-around;
-  margin: 0 auto;
-  opacity: 0;
-  transition: all 1s;
-  transform: translateX(-100%);
-  img{
-    width: 80px;
-  }
-  @media screen and (min-width: 0 ){
-    height: 300px;  
-    width: calc( 100% - 16px) ;
-  };
-  @media screen and (min-width: 768px ){
-    height: 400px;  
-    width: calc( 50% - 16px) ;
-  };
-  @media screen and (min-width: 1024px) {
-    height: 600px;  
-    width: 440px;
-  };
-  &#show{
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-  }
-  @media(prefers-reduced-motion){
-    transition: none;
   }
 `
 
@@ -505,4 +440,4 @@ const Menssage = styled.div`
 
 `
 
-export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, Skills, SecondaryTitle, Card, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Services, Menssage, ContainerLanguage, SelectLanguage}
+export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, SecondaryTitle, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Projects, Menssage, ContainerLanguage, SelectLanguage}
