@@ -46,8 +46,8 @@ export default function Thanks(){
             <Main>
                 <Menssage>
                     <div>
-                        <h2>{texts[25]}</h2>
-                        <Link href={'https://www.devrichard.com.br/'}>{texts[26]}</Link>
+                        <h2>{texts[19]}</h2>
+                        <Link href={'https://www.devrichard.com.br/'}>{texts[20]}</Link>
                     </div>
                 </Menssage>
             </Main>

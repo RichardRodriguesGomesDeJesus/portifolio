@@ -11,7 +11,7 @@ export default function FormContact ({texts}){
   const router = useRouter()
   return(
     <Contact id="contact">
-      <SecondaryTitle>{texts[16]}</SecondaryTitle>
+      <SecondaryTitle>{texts[10]}</SecondaryTitle>
       <Form onSubmit={(e)=>{
         e.preventDefault()
         if (name !== "" && email !== "" && subject !== "" && message !== "") {
@@ -23,23 +23,23 @@ export default function FormContact ({texts}){
           })
         }
       }}>
-          <label htmlFor="name">{texts[17]}</label>
-          <input type="text"name="name" id="name" placeholder={texts[18]} onChange={(e)=>{
+          <label htmlFor="name">{texts[11]}</label>
+          <input type="text"name="name" id="name" placeholder={texts[12]} onChange={(e)=>{
             setName(e.target.value)
           }} value={name} required/>
-          <label htmlFor="email">{texts[19]}</label>
-          <input type="email" name="email" id="email" placeholder={texts[20]} onChange={(e)=>{
+          <label htmlFor="email">{texts[13]}</label>
+          <input type="email" name="email" id="email" placeholder={texts[14]} onChange={(e)=>{
             setEmail(e.target.value)
           }} value={email} required/>
-          <label htmlFor="subject">{texts[21]}</label>
-          <input type="text" placeholder={texts[18]} name="subject" id="subject" onChange={(e)=>{
+          <label htmlFor="subject">{texts[15]}</label>
+          <input type="text" placeholder={texts[12]} name="subject" id="subject" onChange={(e)=>{
             setSubject(e.target.value)
           }} value={subject} required/>
-          <label htmlFor="message">{texts[22]}</label>
-          <textarea rows={10} cols={33} placeholder={texts[23]} name="message" id="message" onChange={(e)=>{
+          <label htmlFor="message">{texts[16]}</label>
+          <textarea rows={10} cols={33} placeholder={texts[17]} name="message" id="message" onChange={(e)=>{
             setMenssage(e.target.value)
           }} value={message} required />
-          <button>{texts[24]}</button>
+          <button>{texts[18]}</button>
       </Form>
     </Contact>
   )

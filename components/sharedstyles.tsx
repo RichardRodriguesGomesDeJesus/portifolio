@@ -208,6 +208,7 @@ const Projects = styled.div`
   margin: 16px 0;
   width: 100vw;
   div{
+    align-items: center;
     display: flex;
     padding: 16px 0;
     border-bottom: solid 5px #000;
@@ -216,12 +217,9 @@ const Projects = styled.div`
     margin: 32px 16px ;
     gap: 1rem;
     text-align: center;
-    width: auto;
+    width:100vw;
     p{
       font-size:2rem;
-    }
-    img{
-      width:100vw;
     }
     a{
       border: solid ${colors.fontColor} 2px;
@@ -237,10 +235,32 @@ const Projects = styled.div`
         opacity:1;
         border: solid ${colors.fontColor} 2px;
         text-shadow: none;
-        color: ${colors.background};
+        color: ${colors.primary};
         box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 40px 0 ${colors.fontColor};
         text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
         background: ${colors.fontColor} ;
+      }
+    }
+  }
+  @media screen and (min-width: 0){
+    div{
+      img{
+        width: 100vw;
+      }
+    }
+  }
+  @media screen and (min-width: 768px){
+    div{
+      img{
+        border-radius: 16px;
+        width: 550px;
+      }
+    }
+  }
+  @media screen and (min-width: 1024px){
+    div{
+      img{
+        width: 800px;
       }
     }
   }
@@ -264,11 +284,11 @@ const Text = styled.p`
 const Carrossel = styled.div`
   ::-webkit-scrollbar {
     width: 10px;
-    background-color: #444444;
+    background-color: transparent;
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #d3d3d3;
+    background-color: ${colors.fontColor};
     border-radius: 10px;
   }
   display: flex;
@@ -297,7 +317,7 @@ const Buttons = styled.div`
     text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
     font-size:1.5rem;
     margin: 1rem 0 0 0;
-    padding: 1rem;
+    padding: .5rem;
     &:hover {
       opacity:1;
       border: solid ${colors.fontColor} 2px;
@@ -324,7 +344,12 @@ const Form = styled.form`
   gap: 1rem;
   width: calc(100% - 32px);
   label{
-    font-size: 2rem;
+    @media screen and (min-width:0 ){
+      font-size: 1.5rem;
+    }
+    @media screen and (min-width:768px ){
+      font-size: 2rem;
+    }
   }
   input{
     background: #D3D3D3;
