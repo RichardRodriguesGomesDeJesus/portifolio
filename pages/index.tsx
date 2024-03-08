@@ -11,10 +11,10 @@ export default function Home (){
     const [textsEnglish, setTextsEnglish] = useState([])
     const [textsPotuguese, setTextsPotuguese] = useState([])
     const carrossel = useRef(null)
+    if(language === ""){
+        setLeguage("Português")
+    }
     useEffect(()=>{
-        if(language === ""){
-            setLeguage("Português")
-        }
         const fetchTexts = async () => {
             try {
                 const response = await axios.get("/api/texts")
