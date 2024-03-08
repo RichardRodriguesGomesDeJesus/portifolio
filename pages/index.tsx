@@ -2,15 +2,30 @@ import Head from "next/head";
 import Link from 'next/link';
 import { useEffect, useRef, useState } from "react";
 import { Container, Header, Banner, LinkSocial, Main, SecondaryTitle, SocialIcons, Text, Title, Carrossel, Buttons, Footer, Menu, Sobre, Projects, ContainerLanguage, SelectLanguage } from "../components/sharedstyles";
-import { textsEnglish, textsPotuguese } from "../utils/texts";
 import FormContact from "../components/formContact";
+import axios from "axios";
 
 export default function Home (){
-    const [ language , setLeguage] = useState("Português")
+    const [ language , setLeguage] = useState("")
     const [ texts, setTexts] = useState([])
-    
+    const [textsEnglish, setTextsEnglish] = useState([])
+    const [textsPotuguese, setTextsPotuguese] = useState([])
     const carrossel = useRef(null)
-
+    useEffect(()=>{
+        if(language === ""){
+            setLeguage("Português")
+        }
+        const fetchTexts = async () => {
+            try {
+                const response = await axios.get("/api/texts")
+                setTextsPotuguese(response.data.portuguese)
+                setTextsEnglish(response.data.english)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchTexts()
+    })
     useEffect(()=>{
         if (language === "English") {
             setTexts(textsEnglish)

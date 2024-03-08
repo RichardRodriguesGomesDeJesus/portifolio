@@ -5,6 +5,7 @@ import { Container, Header, Banner, LinkSocial, Main, SecondaryTitle, SocialIcon
 import { useRouter } from "next/router";
 import { textsEnglish, textsPotuguese } from "../../utils/texts";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function ProjectDescription() {
   const router = useRouter()
@@ -16,8 +17,26 @@ export default function ProjectDescription() {
   const [ language , setLeguage] = useState("Português")
   const [ texts, setTexts] = useState([])
   const [projectID, setProjectId] = useState<number>(0)
-    
-	const projects = [{name: "Lotudy", description: "Lotudy é uma plataforma de estudos com vários recursos interessantes.", english: "Lotudy is a study platform with several interesting features." , technologies: ["Typescript","Next.js","React","Styled Components","Mongo DB"]},{name: "Adopet",description: "Adopet é uma plataforma de adoção de animais.",english: "Adopet is an animal adoption platform.",technologies: ["React","Typescript","Sass","CSS"]}]
+  const [textsEnglish, setTextsEnglish] = useState([])
+  const [textsPotuguese, setTextsPotuguese] = useState([])
+  
+  const projects = [{name: "Lotudy", description: "Lotudy é uma plataforma de estudos com vários recursos interessantes.", english: "Lotudy is a study platform with several interesting features." , technologies: ["Typescript","Next.js","React","Styled Components","Mongo DB"]},{name: "Adopet",description: "Adopet é uma plataforma de adoção de animais.",english: "Adopet is an animal adoption platform.",technologies: ["React","Typescript","Sass","CSS"]}]
+
+  useEffect(()=>{
+    if(language === ""){
+        setLeguage("Português")
+    }
+    const fetchTexts = async () => {
+        try {
+            const response = await axios.get("/api/texts")
+            setTextsPotuguese(response.data.portuguese)
+            setTextsEnglish(response.data.english)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    fetchTexts()
+})
 
   useEffect(()=>{
       if (language === "English") {
