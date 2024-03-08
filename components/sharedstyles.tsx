@@ -130,37 +130,37 @@ const Title = styled.h1`
 
   @keyframes neonRaiwnbow {
     0% {
-      text-shadow: 0 0 red;
+      text-shadow: -1px 1px 0 red, 1px 1px 0 red, 1px -1px 0 red, -1px -1px 0 red;
     } 
     10% {
-      text-shadow: 0 0 orange;
+      text-shadow: -1px 1px 0 orange, 1px 1px 0 orange, 1px -1px 0 orange, -1px -1px 0 orange;
     } 
     20% {
-      text-shadow: 0 0 yellow;
+      text-shadow: -1px 1px 0 yellow, 1px 1px 0 yellow, 1px -1px 0 yellow, -1px -1px 0 yellow;
     } 
     30% {
-      text-shadow: 0 0 orange;
+      text-shadow: -1px 1px 0 orange, 1px 1px 0 orange, 1px -1px 0 orange, --1px -1px 0 orange;
     } 
     40% {
-      text-shadow: 0 0 red;
+      text-shadow: -1px 1px 0 red, 1px 1px 0 red, 1px -1px 0 red, -1px -1px 0 red;
     } 
     50% {
-      text-shadow: 0 0 purple;
+      text-shadow: -1px 1px 0 purple, 1px 1px 0 purple, 1px -1px 0 purple, -1px -1px 0purple;
     } 
     60% {
-      text-shadow: 0 0 blue;
+      text-shadow: -1px 1px 0 blue, 1px 1px 0 blue, 1px -1px 0 blue, -1px -1px 0 blue;
     } 
     70% {
-      text-shadow: 0 0 green;
+      text-shadow: -1px 1px 0 green, 1px 1px 0 green, 1px -1px 0 green, -1px -1px 0 green ;
     } 
     80% {
-      text-shadow: 0 0 yellow;
+      text-shadow: -1px 1px 0 yellow, 1px 1px 0 yellow, 1px -1px 0 yellow, -1px -1px 0 yellow;
     } 
     90% {
-      text-shadow: 0 0 orange;
+      text-shadow: -1px 1px 0 orange, 1px 1px 0 orange, 1px -1px 0 orange, -1px -1px 0 orange;
     }
     100% {
-      text-shadow: 0 0 red;
+      text-shadow: -1px 1px 0 red, 1px 1px 0 red, 1px -1px 0 red, -1px -1px 0 red;
     }  
   }
 
