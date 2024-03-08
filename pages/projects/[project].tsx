@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Container, Header, Banner, LinkSocial, Main, SecondaryTitle, SocialIcons, Text, Title, Carrossel, Buttons, Footer, Menu, Sobre, Projects, ContainerLanguage, SelectLanguage, Project } from "../../components/sharedstyles";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { textsEnglish ,textsPotuguese } from "../../utils/texts";
 
 export default function ProjectDescription() {
   const router = useRouter()
@@ -16,26 +16,9 @@ export default function ProjectDescription() {
   const [ language , setLeguage] = useState("")
   const [ texts, setTexts] = useState([])
   const [projectID, setProjectId] = useState<number>(0)
-  const [textsEnglish, setTextsEnglish] = useState([])
-  const [textsPotuguese, setTextsPotuguese] = useState([])
   
   const projects = [{name: "Lotudy", description: "Lotudy é uma plataforma de estudos com vários recursos interessantes.", english: "Lotudy is a study platform with several interesting features." , technologies: ["Typescript","Next.js","React","Styled Components","Mongo DB"]},{name: "Adopet",description: "Adopet é uma plataforma de adoção de animais.",english: "Adopet is an animal adoption platform.",technologies: ["React","Typescript","Sass","CSS"]}]
 
-  useEffect(()=>{
-    const fetchTexts = async () => {
-        try {
-            const response = await axios.get("/api/texts")
-            setTextsPotuguese(response.data.portuguese)
-            setTextsEnglish(response.data.english)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    fetchTexts()
-    if (language === "") {
-        setTexts(textsEnglish)
-    }
-})
 
   useEffect(()=>{
       if (language === "English") {

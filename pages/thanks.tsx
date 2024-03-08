@@ -2,30 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { Container, ContainerLanguage, Header, LinkSocial, Main, Menssage, SelectLanguage, SocialIcons } from "../components/sharedstyles";
 import { useEffect, useState} from "react";
+import { textsEnglish, textsPotuguese } from "../utils/texts";
 import axios from "axios";
 
 export default function Thanks(){
-    const [textsEnglish, setTextsEnglish] = useState([])
-    const [textsPotuguese, setTextsPotuguese] = useState([])
     const [ language , setLeguage] = useState("")
     const [ texts, setTexts] = useState([])
-    useEffect(()=>{
-        const fetchTexts = async () => {
-            try {
-                const response = await axios.get("/api/texts")
-                setTextsPotuguese(response.data.portuguese)
-                setTextsEnglish(response.data.english)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        fetchTexts()
-        if (language === "") {
-            setTexts(textsEnglish)
-        }
-    })
-    
-
 
     useEffect(()=>{
         if (language === "English") {
