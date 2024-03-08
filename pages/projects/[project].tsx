@@ -13,7 +13,7 @@ export default function ProjectDescription() {
   const projectName = parts[parts.length - 1]
 
 
-  const [ language , setLeguage] = useState("")
+  const [ language , setLeguage] = useState("Português")
   const [ texts, setTexts] = useState([])
   const [projectID, setProjectId] = useState<number>(0)
   
