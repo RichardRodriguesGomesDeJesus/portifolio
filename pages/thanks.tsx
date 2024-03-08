@@ -8,7 +8,7 @@ import axios from "axios";
 export default function Thanks(){
     const [textsEnglish, setTextsEnglish] = useState([])
     const [textsPotuguese, setTextsPotuguese] = useState([])
-    const [ language , setLeguage] = useState("Português")
+    const [ language , setLeguage] = useState("")
     const [ texts, setTexts] = useState([])
     useEffect(()=>{
         if(language === ""){
