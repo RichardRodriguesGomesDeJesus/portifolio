@@ -13,6 +13,7 @@ const Container = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 `
 
 const Header = styled.header`
@@ -206,7 +207,18 @@ const Projects = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 16px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   width: 100vw;
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${colors.fontColor};
+    border-radius: 10px;
+  }
   div{
     align-items: center;
     display: flex;
@@ -214,7 +226,7 @@ const Projects = styled.div`
     border-bottom: solid 5px #000;
     flex-direction:column;
     justify-content: space-between;
-    margin: 32px 16px ;
+    margin: 32px 0 ;
     gap: 1rem;
     text-align: center;
     width:100vw;
@@ -464,5 +476,66 @@ const Menssage = styled.div`
  
 
 `
+const Project = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  margin-bottom: 16px;
+  text-align: justify;
+  div{
+    justify-content: space-around;
+    padding: 1rem 0;
+    align-items: flex-start;
+    div{
+      padding: 0 ;
+    }
+  }
+  h3{
+    margin: 0;
+  }
+  
+  @media screen and (min-width: 0 ){
+    img{
+      width:100%;
+    }
+    div{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin: 0 16px;
+      width: 100%;
+      p{
+        font-size: 1.2rem;
+      }
+      div{
+        display: flex;
+        flex-direction: column;
+        width:auto;
+      }
+    }
+  }
+  @media screen and (min-width: 768px ){
+    img{                      
+      border-radius: 16px;
+      width: 550px;
+    }
+    div{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      p{
+        max-width: 50% ;                                             
+      }
+    }
+  }
+  @media screen and (min-width: 1024px ){
+    img{
+      border-radius: 16px;
+      width: 800px;
+    }
+  }
 
-export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, SecondaryTitle, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Projects, Menssage, ContainerLanguage, SelectLanguage}
+`
+export { Main, Container, Title, Banner, Text, Header, SocialIcons, LinkSocial, SecondaryTitle, Carrossel, Buttons, Contact, Form, Footer, Menu, Sobre, Projects, Menssage, ContainerLanguage, SelectLanguage, Project}
