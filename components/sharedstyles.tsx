@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const colors = {
   primary: "#ff66c4" ,
@@ -119,6 +119,7 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  animation: neonRaiwnbow 5s infinite;
   @media screen and (min-width: 0 ){
     font-size: 1.5rem;
     margin: 1rem;
@@ -126,6 +127,42 @@ const Title = styled.h1`
   @media screen and (min-width: 768px) {
     font-size: 2.5rem;
   };
+
+  @keyframes neonRaiwnbow {
+    0% {
+      text-shadow: 0 0 red;
+    } 
+    10% {
+      text-shadow: 0 0 orange;
+    } 
+    20% {
+      text-shadow: 0 0 yellow;
+    } 
+    30% {
+      text-shadow: 0 0 orange;
+    } 
+    40% {
+      text-shadow: 0 0 red;
+    } 
+    50% {
+      text-shadow: 0 0 purple;
+    } 
+    60% {
+      text-shadow: 0 0 blue;
+    } 
+    70% {
+      text-shadow: 0 0 green;
+    } 
+    80% {
+      text-shadow: 0 0 yellow;
+    } 
+    90% {
+      text-shadow: 0 0 orange;
+    }
+    100% {
+      text-shadow: 0 0 red;
+    }  
+  }
 
 `
 
