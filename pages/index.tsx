@@ -11,9 +11,6 @@ export default function Home (){
     const [textsEnglish, setTextsEnglish] = useState([])
     const [textsPotuguese, setTextsPotuguese] = useState([])
     const carrossel = useRef(null)
-    if(language === ""){
-        setLeguage("Português")
-    }
     useEffect(()=>{
         const fetchTexts = async () => {
             try {
@@ -25,6 +22,9 @@ export default function Home (){
             }
         }
         fetchTexts()
+        if (language === "") {
+            setTexts(textsEnglish)
+        }
     })
     useEffect(()=>{
         if (language === "English") {

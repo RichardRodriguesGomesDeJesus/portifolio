@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import { Container, Header, Banner, LinkSocial, Main, SecondaryTitle, SocialIcons, Text, Title, Carrossel, Buttons, Footer, Menu, Sobre, Projects, ContainerLanguage, SelectLanguage, Project } from "../../components/sharedstyles";
 import { useRouter } from "next/router";
-import { textsEnglish, textsPotuguese } from "../../utils/texts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -23,9 +22,6 @@ export default function ProjectDescription() {
   const projects = [{name: "Lotudy", description: "Lotudy é uma plataforma de estudos com vários recursos interessantes.", english: "Lotudy is a study platform with several interesting features." , technologies: ["Typescript","Next.js","React","Styled Components","Mongo DB"]},{name: "Adopet",description: "Adopet é uma plataforma de adoção de animais.",english: "Adopet is an animal adoption platform.",technologies: ["React","Typescript","Sass","CSS"]}]
 
   useEffect(()=>{
-    if(language === ""){
-        setLeguage("Português")
-    }
     const fetchTexts = async () => {
         try {
             const response = await axios.get("/api/texts")
@@ -36,6 +32,9 @@ export default function ProjectDescription() {
         }
     }
     fetchTexts()
+    if (language === "") {
+        setTexts(textsEnglish)
+    }
 })
 
   useEffect(()=>{
@@ -95,7 +94,7 @@ export default function ProjectDescription() {
                     <Title>{texts[23]}</Title>
                 </Banner>
                 <Project>
-                    <SecondaryTitle>{projects[projectID].name}</SecondaryTitle>
+                    <SecondaryTitle>{projectName}</SecondaryTitle>
                     <img src={`/img/${projectName}.png`}  />
                     <div>
                         <p>{(language === "Português" ? projects[projectID].description : projects[projectID].english)}</p>
