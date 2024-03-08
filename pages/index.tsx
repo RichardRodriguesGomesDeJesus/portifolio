@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from 'next/link'
+import Link from 'next/link';
 import { useEffect, useRef, useState } from "react";
 import { Container, Header, Banner, LinkSocial, Main, SecondaryTitle, SocialIcons, Text, Title, Carrossel, Buttons, Footer, Menu, Sobre, Projects, ContainerLanguage, SelectLanguage } from "../components/sharedstyles";
 import { textsEnglish, textsPotuguese } from "../utils/texts";
@@ -84,6 +84,9 @@ export default function Home (){
                     <Link href={'#contact'}>
                         {texts[0]}
                     </Link>
+                    <Link href={'resume_richard.pdf'}>
+                        {texts[21]}
+                    </Link>
                     <Link href={'#skills'}>
                         {texts[1]}
                     </Link>
@@ -95,22 +98,22 @@ export default function Home (){
                 </Banner>
                 <Sobre>
                     <div>
-                    <p><strong>{texts[3]}</strong> {texts[4]}</p>
-                    <p>{texts[5]}</p>
+                        <p><strong>{texts[3]}</strong> {texts[4]}</p>
+                        <p>{texts[5]}</p>
                     </div>
                     <img src="https://github.com/RichardRodriguesGomesDeJesus.png" alt="My photo" />
                 </Sobre>
+                <SecondaryTitle>{texts[6]}</SecondaryTitle>
                 <Projects>
-                    <SecondaryTitle>{texts[6]}</SecondaryTitle>
                     <div>
                         <p>{texts[7]}</p>
                         <img src="/img/lotudy.png"  />
-                        <Link href={'https://www.lotudy.com.br/'}>{texts[9]}</Link>
+                        <Link href={'/projects/Lotudy'}>{texts[9]}</Link>
                     </div>
                     <div>
                         <p>{texts[8]}</p>
                         <img src="/img/adopet.png"  />
-                        <Link href={'https://adopet-livid.vercel.app/'}>{texts[9]}</Link>
+                        <Link href={'/projects/Adopet'}>{texts[9]}</Link>
                     </div>
                 </Projects>
                 <Carrossel id="skills" ref={carrossel}>
