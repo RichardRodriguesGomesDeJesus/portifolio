@@ -34,7 +34,7 @@ export default function Thanks(){
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linkedin icon" />
                     </LinkSocial>
                     <LinkSocial href="https://github.com/RichardRodriguesGomesDeJesus">
-                        <img src="icons/github-white.svg" alt="github icon" />
+                        <img src="/icons/github-white.svg" alt="github icon" />
                     </LinkSocial>
                 </SocialIcons>
                 <ContainerLanguage>
