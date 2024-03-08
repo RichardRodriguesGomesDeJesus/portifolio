@@ -6,7 +6,7 @@ import { textsEnglish, textsPotuguese } from "../utils/texts";
 import axios from "axios";
 
 export default function Thanks(){
-    const [ language , setLeguage] = useState("")
+    const [ language , setLeguage] = useState("Português")
     const [ texts, setTexts] = useState([])
 
     useEffect(()=>{

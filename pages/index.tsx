@@ -7,7 +7,7 @@ import axios from "axios";
 import { textsEnglish, textsPotuguese } from "../utils/texts";
 
 export default function Home (){
-    const [ language , setLeguage] = useState("")
+    const [ language , setLeguage] = useState("Português")
     const [ texts, setTexts] = useState([])
 
     const carrossel = useRef(null)
