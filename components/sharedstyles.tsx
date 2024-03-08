@@ -114,10 +114,7 @@ const Main = styled.main`
 `
 
 const Title = styled.h1`
-  background: linear-gradient(to right, ${colors.terceary},  ${colors.segundary},  ${colors.primary});
-  letter-spacing: 0.1em;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: black;
   text-align: center;
   animation: neonRaiwnbow 5s infinite;
   @media screen and (min-width: 0 ){
@@ -197,7 +194,7 @@ const Sobre = styled.div`
   div{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     width:100%;
     p{
       font-size: 1.2rem;
@@ -212,10 +209,7 @@ const Sobre = styled.div`
   @media screen and (min-width: 0 ){
     flex-direction: column-reverse;
     img{
-      border: 5px solid transparent;
-      background: linear-gradient(${colors.background}, ${colors.terceary}) padding-box;
       border-radius: 100% ;
-      padding: 1rem;
       display: flex;
       max-height: 100%;
       margin: 0 auto;
@@ -226,10 +220,7 @@ const Sobre = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     img{
-      border: 5px solid transparent;
-      background: linear-gradient(${colors.background}, ${colors.terceary}) padding-box;
       border-radius: 100% ;
-      padding: 1rem;
       display: flex;
       max-height: 50%;
       margin: 0 auto;

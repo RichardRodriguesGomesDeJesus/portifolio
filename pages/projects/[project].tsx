@@ -73,7 +73,7 @@ export default function ProjectDescription() {
             </Header>
             <Main>
                 <Banner>
-                    <Title>Detalhes do Projeto</Title>
+                    <Title>{texts[23]}</Title>
                 </Banner>
                 <Project>
                     <SecondaryTitle>{projects[projectID].name}</SecondaryTitle>
@@ -83,10 +83,10 @@ export default function ProjectDescription() {
                         <div>
                             <h3>{texts[22]}</h3>
                             <ul>
-														{projects[projectID].technologies.map((e, index)=>(
-																<li key={index}>{e}</li>
-															))}
-														</ul>
+                            {projects[projectID].technologies.map((e, index)=>(
+                                    <li key={index}>{e}</li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </Project>
