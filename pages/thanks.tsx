@@ -3,18 +3,45 @@ import Link from "next/link";
 import { Container, ContainerLanguage, Header, LinkSocial, Main, Menssage, SelectLanguage, SocialIcons } from "../components/sharedstyles";
 import { useEffect, useState} from "react";
 import { textsEnglish, textsPotuguese } from "../utils/texts";
-import axios from "axios";
 
 export default function Thanks(){
-    const [ language , setLeguage] = useState("Português")
+    const [ language , setLanguage] = useState("")
     const [ texts, setTexts] = useState([])
-
+    useEffect(()=>{
+        const localLang = localStorage.getItem("language")
+        console.log(localLang)
+        if(localLang === null){
+            const userLang = navigator.language;
+            if (userLang == "pt-BR") {
+                setLanguage("Português")
+                localStorage.setItem("language","Português")
+                setTexts(textsPotuguese)
+            } else{
+                setLanguage("English")
+                localStorage.setItem("language","English")
+                setTexts(textsEnglish)
+            }
+        } else {
+            const lang = localStorage.getItem("language")
+            if (lang === "Português" ) {
+                setLanguage("Português")
+                setTexts(textsPotuguese)
+            } else{
+                setLanguage("English")
+                setTexts(textsEnglish)
+            }
+        }
+    },[language === ""])
     useEffect(()=>{
         if (language === "English") {
             setTexts(textsEnglish)
+            localStorage.removeItem("language")
+            localStorage.setItem("language","English")
         }
         if (language === "Português"){
             setTexts(textsPotuguese)
+            localStorage.removeItem("language")
+            localStorage.setItem("language","Português")
         }
     },[language])
     return(
@@ -38,7 +65,7 @@ export default function Thanks(){
                 </SocialIcons>
                 <ContainerLanguage>
                     <SelectLanguage onChange={(e)=> {
-                            setLeguage(e.target.value)
+                            setLanguage(e.target.value)
                         }} value={language}>
                         <option value="English">English</option>
                         <option value="Português">Português</option>

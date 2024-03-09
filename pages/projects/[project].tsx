@@ -13,21 +13,48 @@ export default function ProjectDescription() {
   const projectName = parts[parts.length - 1]
 
 
-  const [ language , setLeguage] = useState("Português")
+  const [ language , setLanguage] = useState("")
   const [ texts, setTexts] = useState([])
   const [projectID, setProjectId] = useState<number>(0)
   
   const projects = [{name: "Lotudy", description: "Lotudy é uma plataforma de estudos com vários recursos interessantes.", english: "Lotudy is a study platform with several interesting features." , technologies: ["Typescript","Next.js","React","Styled Components","Mongo DB"]},{name: "Adopet",description: "Adopet é uma plataforma de adoção de animais.",english: "Adopet is an animal adoption platform.",technologies: ["React","Typescript","Sass","CSS"]}]
 
-
   useEffect(()=>{
-      if (language === "English") {
-          setTexts(textsEnglish)
-      }
-      if (language === "Português"){
-          setTexts(textsPotuguese)
-      }
-  },[language])
+    const localLang = localStorage.getItem("language")
+    if(localLang === null){
+        const userLang = navigator.language;
+        if (userLang == "pt-BR") {
+            setLanguage("Português")
+            localStorage.setItem("language","Português")
+            setTexts(textsPotuguese)
+        } else{
+            setLanguage("English")
+            localStorage.setItem("language","English")
+            setTexts(textsEnglish)
+        }
+    } else {
+        const lang = localStorage.getItem("language")
+        if (lang === "Português" ) {
+            setLanguage("Português")
+            setTexts(textsPotuguese)
+        } else{
+            setLanguage("English")
+            setTexts(textsEnglish)
+        }
+    }
+  },[language === ""])
+    useEffect(()=>{
+        if (language === "English") {
+            setTexts(textsEnglish)
+            localStorage.removeItem("language")
+            localStorage.setItem("language","English")
+        }
+        if (language === "Português"){
+            setTexts(textsPotuguese)
+            localStorage.removeItem("language")
+            localStorage.setItem("language","Português")
+        }
+    },[language])
 	
 	useEffect(()=>{
 		if (projectName !== undefined && projectName !== "Lotudy" && projectName !== "Adopet") {
@@ -57,7 +84,7 @@ export default function ProjectDescription() {
                 </SocialIcons>
                 <ContainerLanguage>
                     <SelectLanguage onChange={(e)=> {
-                            setLeguage(e.target.value)
+                            setLanguage(e.target.value)
                         }} value={language}>
                         <option value="English">English</option>
                         <option value="Português">Português</option>
@@ -80,11 +107,11 @@ export default function ProjectDescription() {
                     <SecondaryTitle>{projectName}</SecondaryTitle>
                     <img src={`/img/${projectName}.png`}  />
                     <div>
-                        <p>{(language === "Português" ? projects[projectID].description : projects[projectID].english)}</p>
+                        <p>{(language === "Português" ? projects[projectID]?.description : projects[projectID]?.english)}</p>
                         <div>
                             <h3>{texts[22]}</h3>
                             <ul>
-                            {projects[projectID].technologies.map((e, index)=>(
+                            {projects[projectID]?.technologies.map((e, index)=>(
                                     <li key={index}>{e}</li>
                                 ))}
                             </ul>

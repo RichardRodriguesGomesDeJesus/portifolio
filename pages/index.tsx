@@ -3,20 +3,50 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from "react";
 import { Container, Header, Banner, LinkSocial, Main, SecondaryTitle, SocialIcons, Text, Title, Carrossel, Buttons, Footer, Menu, Sobre, Projects, ContainerLanguage, SelectLanguage } from "../components/sharedstyles";
 import FormContact from "../components/formContact";
-import axios from "axios";
 import { textsEnglish, textsPotuguese } from "../utils/texts";
 
 export default function Home (){
-    const [ language , setLeguage] = useState("Português")
+    const [ language , setLanguage] = useState("")
     const [ texts, setTexts] = useState([])
 
+
+    useEffect(()=>{
+        const localLang = localStorage.getItem("language")
+        console.log(localLang)
+        console.log(texts)
+        if(localLang === null){
+            const userLang = navigator.language;
+            if (userLang == "pt-BR") {
+                setLanguage("Português")
+                localStorage.setItem("language","Português")
+                setTexts(textsPotuguese)
+            } else{
+                setLanguage("English")
+                localStorage.setItem("language","English")
+                setTexts(textsEnglish)
+            }
+        } else {
+            const lang = localStorage.getItem("language")
+            if (lang === "Português" ) {
+                setLanguage("Português")
+                setTexts(textsPotuguese)
+            } else{
+                setLanguage("English")
+                setTexts(textsEnglish)
+            }
+        }
+    },[language === ""])
     const carrossel = useRef(null)
     useEffect(()=>{
         if (language === "English") {
             setTexts(textsEnglish)
+            localStorage.removeItem("language")
+            localStorage.setItem("language","English")
         }
         if (language === "Português"){
             setTexts(textsPotuguese)
+            localStorage.removeItem("language")
+            localStorage.setItem("language","Português")
         }
     },[language])
     const handleLeftClick = (e) => {
@@ -74,7 +104,7 @@ export default function Home (){
                 </SocialIcons>
                 <ContainerLanguage>
                     <SelectLanguage onChange={(e)=> {
-                            setLeguage(e.target.value)
+                            setLanguage(e.target.value)
                         }} value={language}>
                         <option value="English">English</option>
                         <option value="Português">Português</option>
