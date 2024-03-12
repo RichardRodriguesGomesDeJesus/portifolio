@@ -9,7 +9,6 @@ export default function Thanks(){
     const [ texts, setTexts] = useState([])
     useEffect(()=>{
         const localLang = localStorage.getItem("language")
-        console.log(localLang)
         if(localLang === null){
             const userLang = navigator.language;
             if (userLang == "pt-BR") {

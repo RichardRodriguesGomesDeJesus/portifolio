@@ -12,8 +12,6 @@ export default function Home (){
 
     useEffect(()=>{
         const localLang = localStorage.getItem("language")
-        console.log(localLang)
-        console.log(texts)
         if(localLang === null){
             const userLang = navigator.language;
             if (userLang == "pt-BR") {
