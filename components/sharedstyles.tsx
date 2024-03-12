@@ -62,6 +62,7 @@ const SelectLanguage = styled.select`
   background: transparent;
   border: none;
   option {
+    text-align: center;
     background: #767676;
   }
 
@@ -178,12 +179,17 @@ const Banner = styled.div`
 `
 
 const SecondaryTitle = styled.h2`
-  font-size: 2rem;
   line-height: 1.15;
   margin: 2rem 0;
   text-align: center;
   text-decoration: none;
   width:100%;
+  @media screen and (min-width: 0 ){
+    font-size: 1.2rem;
+  };
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  };
 `
 
 const Sobre = styled.div`
