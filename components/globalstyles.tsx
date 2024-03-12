@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
-    font-family: 'Open Sans';
+    font-family: 'Krona One';
     box-sizing: border-box;
   }
   h2,p{
