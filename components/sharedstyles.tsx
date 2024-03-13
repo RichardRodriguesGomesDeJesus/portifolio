@@ -406,7 +406,7 @@ const Form = styled.form`
     border: solid #D3D3D3 1px;
     border-radius: 16px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: .5rem;
     height: 35px;
     width: 100%;
@@ -422,7 +422,7 @@ const Form = styled.form`
     border: solid #D3D3D3 1px;
     border-radius: 16px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1rem;
     flex-grow: 1 ;
     padding: 8px;
     width: 100%;
