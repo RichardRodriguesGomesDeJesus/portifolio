@@ -202,11 +202,11 @@ const Sobre = styled.div`
     justify-content: center;
     width:100%;
     p{
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin: 1rem 0 ;
       strong{
-        font-size:2rem;
-        text-decoration: underline;
+        font-size:1.2rem;
+        text-decoration: none;
       }
     }
   }
