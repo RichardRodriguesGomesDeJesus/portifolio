@@ -519,9 +519,9 @@ const Project = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 100vh;
   margin-bottom: 16px;
   text-align: justify;
+  gap: 1rem;
   div{
     justify-content: space-around;
     padding: 1rem 0;
