@@ -96,9 +96,8 @@ const Menu = styled.ul`
     font-size: 1.2rem;
     padding: 6px;
     &:hover{
-      text-decoration: underline;
-      
-      color:#fff ;
+      color: ${colors.segundary} ;
+      text-shadow: 1px 1px 17px ${colors.segundary};
       padding: 5px;
     }
   }
@@ -265,18 +264,22 @@ const Projects = styled.div`
     text-align: center;
     width:100vw;
     p{
-      font-size:2rem;
+      font-size:1.2rem;
     }
     a{
       border: solid ${colors.fontColor} 2px;
       border-radius: 16px;
       color: ${colors.fontColor};
+      display:flex;
       box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 32px 0 ${colors.fontColor};
       text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
-      font-size:1.5rem;
+      align-items: center;
+      justify-content: center;
+      font-size:1rem;
       margin: auto;
       padding: 1rem;
-      width: 280px;
+      height: 60px;
+      width: 260px;
       &:hover {
         opacity:1;
         border: solid ${colors.fontColor} 2px;
@@ -359,6 +362,7 @@ const Buttons = styled.div`
     border: solid ${colors.fontColor} 2px;
     border-radius: 16px;
     color: ${colors.fontColor};
+    cursor: pointer;
     box-shadow: inset 0 0 32px 0 ${colors.fontColor}, 0 0 32px 0 ${colors.fontColor};
     text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
     font-size:1.5rem;
@@ -391,10 +395,10 @@ const Form = styled.form`
   width: calc(100% - 32px);
   label{
     @media screen and (min-width:0 ){
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     @media screen and (min-width:768px ){
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
   }
   input{
@@ -527,6 +531,7 @@ const Project = styled.div`
     }
   }
   h3{
+    font-size: 1.2rem;
     margin: 0;
   }
   
@@ -541,7 +546,7 @@ const Project = styled.div`
       margin: 0 16px;
       width: 100%;
       p{
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       div{
         display: flex;

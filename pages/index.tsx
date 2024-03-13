@@ -9,7 +9,6 @@ export default function Home (){
     const [ language , setLanguage] = useState("")
     const [ texts, setTexts] = useState([])
 
-
     useEffect(()=>{
         const localLang = localStorage.getItem("language")
         if(localLang === null){
