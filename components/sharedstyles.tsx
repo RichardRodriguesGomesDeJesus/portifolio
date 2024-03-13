@@ -341,7 +341,7 @@ const Carrossel = styled.div`
     border-radius: 10px;
   }
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   justify-content: space-between;
   margin: 1rem 0;
@@ -406,7 +406,7 @@ const Form = styled.form`
     border: solid #D3D3D3 1px;
     border-radius: 16px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: .5rem;
     height: 35px;
     width: 100%;
@@ -422,7 +422,7 @@ const Form = styled.form`
     border: solid #D3D3D3 1px;
     border-radius: 16px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.5rem;
     flex-grow: 1 ;
     padding: 8px;
     width: 100%;
@@ -528,6 +528,9 @@ const Project = styled.div`
     align-items: flex-start;
     div{
       padding: 0 ;
+      ul{
+        font-size: 1rem;
+      }
     }
   }
   h3{
