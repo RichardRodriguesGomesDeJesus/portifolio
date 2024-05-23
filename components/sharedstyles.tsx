@@ -118,7 +118,7 @@ const Title = styled.h1`
   text-align: center;
   animation: neonRaiwnbow 5s infinite;
   @media screen and (min-width: 0 ){
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 1rem;
   };
   @media screen and (min-width: 768px) {
