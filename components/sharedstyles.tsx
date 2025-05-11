@@ -173,7 +173,7 @@ const Banner = styled.div`
     height: calc( 50vh - 4rem);
   };
   @media screen and (min-width: 768px) {
-    height: calc( 100vh - 4rem);
+    height: calc( 70vh - 4rem);
   };
 `
 
