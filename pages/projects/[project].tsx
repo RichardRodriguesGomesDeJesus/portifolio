@@ -15,6 +15,8 @@ export default function ProjectDescription() {
   const [ language , setLanguage] = useState("")
   const [ texts, setTexts] = useState([])
   const [projectID, setProjectId] = useState<number>(0)
+
+  const [ linkProject, setLinkProject] = useState<string>("")
   
   const projects = [{name: "Lotudy", description: "Lotudy é uma plataforma de estudos com vários recursos interessantes.", english: "Lotudy is a study platform with several interesting features." , technologies: ["Typescript","Next.js","React","Styled Components","Mongo DB"]},{name: "Adopet",description: "Adopet é uma plataforma de adoção de animais.",english: "Adopet is an animal adoption platform.",technologies: ["React","Typescript","Sass","CSS"]}]
 
@@ -59,7 +61,16 @@ export default function ProjectDescription() {
 		if (projectName !== undefined && projectName !== "Lotudy" && projectName !== "Adopet") {
 			router.push("/")
 		}
+
         setProjectId(projects.findIndex((e)=> e.name === projectName))
+
+        if (projectName === "Lotudy" && linkProject === "") {
+            setLinkProject("https://lotudy.com.br/")
+        }
+
+        if (projectName === "Adopet" && linkProject === "") {
+            setLinkProject("https://adopet-livid.vercel.app/")
+        }
 	})
 
   return(
@@ -104,7 +115,9 @@ export default function ProjectDescription() {
                 </Banner>
                 <Project>
                     <SecondaryTitle>{projectName}</SecondaryTitle>
-                    <img src={`/img/${projectName}.png`}  />
+                    <a href={linkProject} >
+                        <img src={`/img/${projectName}.png`}  />
+                    </a>
                     <div>
                         <p>{(language === "Português" ? projects[projectID]?.description : projects[projectID]?.english)}</p>
                         <div>
