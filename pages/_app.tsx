@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from '../components/globalstyles'
+import React, { use } from 'react';
+import { PacmanLoader } from 'react-spinners';
 
 const theme: DefaultTheme = {
   colors: {
@@ -10,12 +12,36 @@ const theme: DefaultTheme = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const  [loading, setLoading] = React.useState(false);
+  
+  React.useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    },2000)
+
+  },[])
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {loading ? 
+      <PacmanLoader
+        speedMultiplier={1.5}
+        color={'Yellow'}
+        loading={loading}
+        cssOverride={{
+          display: 'flex',
+          margin: '20vh auto',
+        }}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      :
+      <>
         <Component {...pageProps} />
-      </ThemeProvider>
-    </>
+      </>
+      }
+    </ThemeProvider >
   )
 }
