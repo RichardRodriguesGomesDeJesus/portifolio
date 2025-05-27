@@ -15,9 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const  [loading, setLoading] = React.useState(false);
   
   React.useEffect(() => {
-    setLoading(true)
     setTimeout(() => {
-      setLoading(false)
+      setLoading(true)
     },2000)
 
   },[])
@@ -25,10 +24,14 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       {loading ? 
+      <>
+        <Component {...pageProps} />
+      </>
+      :
       <PacmanLoader
         speedMultiplier={1.5}
         color={'Yellow'}
-        loading={loading}
+        loading={!loading}
         cssOverride={{
           display: 'flex',
           margin: '20vh auto',
@@ -37,10 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
         aria-label="Loading Spinner"
         data-testid="loader"
       />
-      :
-      <>
-        <Component {...pageProps} />
-      </>
       }
     </ThemeProvider >
   )
